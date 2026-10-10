@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cytokine signaling and CD4 T cells · Cytokine Challenge</title><meta name="description" content="An introduction to cytokine signaling, cellular context, and the interpretation of single-cell expression measurements.">
+<meta name="theme-color" content="#fdfdfb"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://cytokinechallenge.org/biology/"><meta property="og:type" content="website"><meta property="og:title" content="Cytokine signaling and CD4 T cells · Cytokine Challenge"><meta property="og:description" content="An introduction to cytokine signaling, cellular context, and the interpretation of single-cell expression measurements."><meta property="og:url" content="https://cytokinechallenge.org/biology/"><meta property="og:image" content="https://cytokinechallenge.org/assets/cytokine-watercolor.webp">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=547955395d94"><script src="/assets/app.js?v=cabff10b1fa9" defer></script></head>
+<body class="inner-page"><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Cytokine Challenge home"><img class="brand-mark" src="/assets/favicon.svg" alt="" width="32" height="36"><span>Cytokine<span class="brand-light"> Challenge</span></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu +</button>
+<nav id="primary-nav" class="primary-nav" aria-label="Main navigation"><a href="/biology/" aria-current="page">Learn</a><a href="/dataset/">Data</a><a href="/models/">Models</a><a href="/challenge/">Challenge</a><a href="/protocol/">Protocol</a><a href="/tutorials/">Tutorials</a><a class="nav-github" href="https://github.com/akdslab"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.93.1-.73.39-1.22.71-1.5-2.5-.28-5.12-1.25-5.12-5.54 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.08 1.15a10.72 10.72 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.63 5.25-5.13 5.53.4.35.76 1.03.76 2.07v3.17c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main" class="container" tabindex="-1"><section class="page-intro">
+  <p class="eyebrow">Biology primer</p>
+  <h1>Cytokines and<br><em>CD4 T-cell responses</em></h1>
+  <p class="lede">Cytokines are proteins released by cells that regulate cellular activity. A T cell’s response depends on which cytokines are present together.</p>
+</section><nav class="page-index" aria-label="On this page"><span>On this page</span><a href="#cells">CD4 T cells</a><a href="#signals">Signaling</a><a href="#combinations">Combinations</a><a href="#measurement">Single-cell data</a><a href="#context">Context</a><a href="#prediction">Prediction</a></nav>
+
+<article class="biology-primer" aria-label="Cytokine biology and the prediction problem">
+<section class="section" id="cells">
+  <span class="eyebrow">01 / Immune function</span>
+  <h2>How cytokines affect T-cell function</h2>
+  <div class="prose">
+    <p>CD4 T cells help coordinate immune responses. Some help other immune cells fight infection; regulatory CD4 T cells limit inflammation and protect healthy tissue. Experiments in mice show that removing regulatory T cells can cause the immune system to attack the body’s own tissues. <a href="https://pubmed.ncbi.nlm.nih.gov/17136045/">Kim et al., 2007</a>.</p>
+    <p>Cytokines affect whether a T cell survives, divides, or develops specialized functions. CD4 T cells can occupy different <strong>cell states</strong>: they may be resting, dividing, or producing different proteins.</p>
+    <p>This dataset starts from <strong>naïve CD4 T cells</strong>, before activation by their specific molecular target, or antigen. Cells within a naïve population can still differ in gene expression and response potential. <a href="https://pubmed.ncbi.nlm.nih.gov/39866877/">Sajani et al., 2025 (preprint)</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="signals">
+  <span class="eyebrow">02 / Cytokine signaling</span>
+  <h2>From an external signal to gene expression</h2>
+  <div class="prose">
+    <p>A cytokine acts by binding to a <strong>receptor</strong>, a protein on the receiving cell. Binding can activate a sequence of molecular events inside the cell, called a signaling pathway. These events can change the activity of proteins that regulate which genes are copied into RNA.</p>
+  </div>
+  <ol class="primer-signaling" aria-label="Three steps from cytokine binding to gene expression">
+    <li><span>01 / Binding</span><strong>Cytokine binds a receptor</strong><p>The cell must have the receptor components needed to respond.</p></li>
+    <li><span>02 / Signaling</span><strong>Intracellular proteins respond</strong><p>Signals pass through pathways that different cytokines can share.</p></li>
+    <li><span>03 / Transcription</span><strong>Gene activity changes</strong><p>The cell changes how much RNA it produces from particular genes.</p></li>
+  </ol>
+  <div class="prose">
+    <p><strong>Gene expression</strong> describes the production of RNA from genes and, for protein-coding genes, its use to make proteins. Here, expression is measured as RNA abundance. Thousands of genes can be measured together, including genes involved in division, metabolism, and immune activity.</p>
+    <p>For example, the cytokine IL-4 activates STAT6, a protein that regulates transcription. In mice lacking STAT6, T cells failed to develop the usual IL-4-induced Th2 response, a specialized helper-cell response. <a href="https://pubmed.ncbi.nlm.nih.gov/8624821/">Kaplan et al., 1996</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="combinations">
+  <span class="eyebrow">03 / Combined signals</span>
+  <h2>How cytokines interact</h2>
+  <div class="prose">
+    <p>Researchers measure a cytokine’s effect by exposing cells to it and comparing them with a control group kept under otherwise matched conditions. This deliberate change to the cells’ environment is a <strong>perturbation</strong>.</p>
+    <p>Measuring cytokine A alone and cytokine B alone gives two individual effects. Their combined effect can differ from the sum. Shared signaling pathways and changes in gene regulation allow one cytokine to strengthen, suppress, or alter the response to another.</p>
+    <p>In activated mouse T cells, TGF-β promoted the development of regulatory T cells under the conditions studied. Adding IL-6 suppressed that regulatory response and favored cells that produced the inflammatory cytokine IL-17. The combination changed the kind of response, rather than simply increasing its size. <a href="https://pubmed.ncbi.nlm.nih.gov/16648838/">Bettelli et al., 2006</a>.</p>
+    <p>An <strong>additive baseline</strong> predicts the combined response by adding the change caused by A to the change caused by B, relative to a matched control. It is a useful comparison, but its meaning depends on the expression scale, doses, and measurement time. A departure from additivity alone does not identify the molecular mechanism.</p>
+    <p class="small">IL-4, TGF-β, and IL-6 are examples from published studies, not a statement of the dataset’s cytokine panel.</p>
+  </div>
+</section>
+
+<section class="section" id="measurement">
+  <span class="eyebrow">04 / Single-cell measurements</span>
+  <h2>Measuring responses one cell at a time</h2>
+  <div class="prose">
+    <p><strong>Single-cell RNA sequencing</strong> measures RNA from individual cells. The data can be arranged as a matrix: each row is a cell, each column is a gene, and each entry records measured expression. Annotations identify the cytokine condition and other recorded experimental details for each cell. Observed variation includes both biological differences and measurement noise. <a href="https://www.nature.com/articles/nmeth.2645">Brennecke et al., 2013</a>.</p>
+    <p>Cells exposed to the same treatment need not respond equally. Two populations can have the same average expression even if one responds fairly uniformly and the other contains a small group of strongly responding cells. Measuring individual cells helps distinguish these cases.</p>
+    <p>The measurements are <strong>unpaired</strong>. Standard single-cell RNA sequencing consumes the cells, so a control cell and a treated cell are different cells. The model learns from populations sampled under different conditions; the data do not reveal each cell’s exact before-and-after response. <a href="https://pubmed.ncbi.nlm.nih.gov/37770709/">Bunne et al., 2023</a>.</p>
+    <p>RNA also captures only part of cell biology. A predicted expression pattern can suggest a functional change, but establishing protein activity or a lasting change in cell behavior requires further measurements.</p>
+  </div>
+</section>
+
+<section class="section" id="context">
+  <span class="eyebrow">05 / Experimental context</span>
+  <h2>The same cytokine can have different effects</h2>
+  <div class="prose">
+    <p>A cytokine name is not a complete description of a treatment. Receptor abundance, prior stimulation, dose, and elapsed time all affect what a cell can do in response. For example, experiments linked differences in IL-2 signaling between CD4 and CD8 T cells to the amount of a receptor component. <a href="https://pubmed.ncbi.nlm.nih.gov/29259099/">Smith et al., 2017</a>.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <caption>Experimental information needed to interpret a response</caption>
+      <thead><tr><th scope="col">Information</th><th scope="col">What it helps distinguish</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Starting state and activation</th><td>A response in a resting population from one in cells already stimulated to respond.</td></tr>
+        <tr><th scope="row">Dose and timing</th><td>Effects of the cytokine combination from effects of concentration or exposure time.</td></tr>
+        <tr><th scope="row">Donor and sample</th><td>A response shared across biological samples from variation specific to one sample.</td></tr>
+        <tr><th scope="row">Control and batch</th><td>Treatment-associated changes from baseline expression and technical differences.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="prediction">
+  <span class="eyebrow">06 / The prediction problem</span>
+  <h2>Learning from a measured subset of combinations</h2>
+  <div class="prose">
+    <p>With each cytokine either absent or present at one fixed dose, a panel of <em>n</em> cytokines has 2<sup>n</sup> possible conditions, including the control. A hypothetical panel of 20 cytokines gives more than a million conditions. Models must learn from a measured subset to predict expression in the remaining conditions.</p>
+    <p>For example, a model might train on a control, individual cytokines A, B, and C, and the combinations A + C and B + C. It is then tested on A + B. The components are familiar, but their joint response has not been shown during training. All A + B cells must stay out of training for this to test a new combination.</p>
+    <p>A virtual immune-cell model uses the cytokine condition and recorded cellular context to predict a population of expression profiles. Held-out measurements test its predictions of both average expression and variation between cells.</p>
+  </div>
+  <div class="actions"><a class="button" href="/challenge/">Prediction tasks and evaluation →</a><a class="text-link" href="/tutorials/get-started/">Try the additive baseline →</a><a class="text-link" href="/glossary/">Glossary →</a></div>
+</section>
+</article>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="brand" href="/" aria-label="Cytokine Challenge home"><img class="brand-mark" src="/assets/favicon.svg" alt="" width="32" height="36"><span>Cytokine<span class="brand-light"> Challenge</span></span></a></div><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About &amp; Funding</a><a href="/about/#citations">Citations</a><a href="/glossary/">Glossary</a><a href="/tutorials/assistant-setup/">Coding-assistant guide</a><a href="/models/#resources">Model resources</a><a href="/community/">Feedback</a></nav></div><div class="footer-bottom"><span>Updated <time datetime="2026-10-07">October 7, 2026</time> · Research Use Only</span></div></div></footer>
+<div id="copy-status" class="sr-only" role="status" aria-live="polite"></div></body></html>

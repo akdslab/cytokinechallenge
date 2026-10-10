@@ -1,0 +1,61 @@
+{
+  "template": "Cytokine Challenge analysis record",
+  "template_version": "1.0",
+  "instructions": "Optional documentation template, not an official dataset schema or scoring specification. Replace null values and empty lists with your analysis details; remove inapplicable fields. Keep referenced files with the record. This file contains no experimental observations or split assignments.",
+  "dataset": {
+    "name": null,
+    "version": null,
+    "source_url": null,
+    "license": null,
+    "file_checksums": [],
+    "selected_population": null,
+    "condition_and_sample_metadata_file": null,
+    "inclusion_and_exclusion_criteria": null
+  },
+  "task": {
+    "name": null,
+    "prediction_target": null,
+    "split_manifest_file": null,
+    "split_manifest_sha256": null,
+    "grouping_variables": [],
+    "training_combination_sizes": [],
+    "validation_combination_sizes": [],
+    "test_combination_sizes": [],
+    "cells_samples_donors_and_conditions_per_split": null,
+    "held_out_donor_controls_used_at_prediction_time": null,
+    "other_information_available_at_prediction_time": null
+  },
+  "preprocessing": {
+    "code_version": null,
+    "configuration_file": null,
+    "expression_layer_and_scale": null,
+    "gene_identifier_type": null,
+    "gene_list_file": null,
+    "gene_list_sha256": null,
+    "data_used_to_fit_transformations_and_select_features": null,
+    "control_matching": null
+  },
+  "model": {
+    "name": null,
+    "code_url_and_commit": null,
+    "checkpoint": null,
+    "configuration_file": null,
+    "additional_training_or_pretraining_datasets": [],
+    "random_seeds": [],
+    "environment_file": null,
+    "hardware": null,
+    "runtime_and_peak_memory": null
+  },
+  "evaluation": {
+    "code_url_and_version": null,
+    "configuration_file": null,
+    "metrics_and_direction": [],
+    "gene_subsets_and_how_selected": [],
+    "aggregation_and_weighting": null,
+    "baseline_definitions_and_available_inputs": [],
+    "per_condition_and_donor_scores_file": null,
+    "baseline_scores_file": null,
+    "uncertainty_method_and_replication_unit": null,
+    "predictions_file": null
+  }
+}
